@@ -1,0 +1,166 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+main {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  color: #fff;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5rem;
+}
+
+form {
+  display: grid;
+  gap: 0.75rem;
+  background: #1e1e1e;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.kbzhu-inputs {
+  display: flex;
+  gap: 1rem;
+}
+
+.kbzhu-inputs div {
+  flex: 1;
+}
+
+input, textarea, button, select {
+  font: inherit;
+  padding: 0.6rem;
+  background: #2d2d2d;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  background: #007acc;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #0062a3;
+}
+
+/* Карточки рецептов */
+li {
+  background: #1e1e1e;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-block: 1rem;
+  list-style: none;
+}
+
+.recipe-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.kbzhu-badge {
+  display: inline-block;
+  background: #333;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin: 0.25rem;
+}
+
+.servings-control {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-block: 0.5rem;
+}
+
+.servings-control input {
+  width: 4rem;
+}
+
+/* Сетка недели */
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.day-card {
+  background: #252526;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #3c3c3c;
+}
+
+.day-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: #007acc;
+}
+
+.scheduled-item {
+  background: #333;
+  font-size: 0.9rem;
+  padding: 0.25rem 0.5rem;
+  margin-block: 0.25rem;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Список покупок */
+.category-block {
+  background: #1e1e1e;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.category-title {
+  font-weight: bold;
+  color: #4ec9b0;
+}
+
+/* Индикатор сохранения локальной памяти */
+.save-status {
+  font-size: 0.85rem;
+  color: #52c41a;
+  background: #1b2c14;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.save-status.saving {
+  color: #faad14;
+  background: #2b2111;
+}
+
+/* Блок управления памятью */
+.storage-controls {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background: #252526;
+  border: 1px dashed #444;
+  border-radius: 8px;
+}

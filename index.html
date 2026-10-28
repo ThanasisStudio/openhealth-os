@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Умная кулинарная книга</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Любимые рецепты</h1>
+    <div id="save-status" class="save-status">● Все данные сохранены локально</div>
+
+    
+    <!-- Форма создания рецепта -->
+    <form id="recipe-form">
+      <h3>Новый рецепт (на 1 порцию)</h3>
+      <label for="recipe-name">Название рецепта</label>
+      <input id="recipe-name" required placeholder="Например: Курица с рисом">
+
+      <label for="recipe-description">Инструкция по приготовлению</label>
+      <textarea id="recipe-description" required placeholder="Шаги приготовления..."></textarea>
+
+      <div class="kbzhu-inputs">
+        <div>
+          <label for="rec-cal">Кал (ккал)</label>
+          <input type="number" id="rec-cal" required min="0" value="300">
+        </div>
+        <div>
+          <label for="rec-prot">Б (г)</label>
+          <input type="number" id="rec-prot" required min="0" value="20">
+        </div>
+        <div>
+          <label for="rec-fat">Ж (г)</label>
+          <input type="number" id="rec-fat" required min="0" value="10">
+        </div>
+        <div>
+          <label for="rec-carbs">У (г)</label>
+          <input type="number" id="rec-carbs" required min="0" value="30">
+        </div>
+      </div>
+
+      <label for="recipe-ingredients">Ингредиенты (Формат: Название - Кол-во Категория)</label>
+      <textarea id="recipe-ingredients" required placeholder="Курица - 150 г - Мясо&#10;Рис - 80 г - Бакалея"></textarea>
+
+      <button type="submit">Добавить рецепт в базу</button>
+    </form>
+
+    <!-- Список рецептов -->
+    <h2>Все рецепты</h2>
+    <ul id="recipe-list" aria-live="polite"></ul>
+
+    <!-- Планировщик меню -->
+    <h2>План меню на неделю</h2>
+    <div id="weekly-scheduler" class="week-grid">
+      <div class="day-card" data-day="Пн"><h4>Понедельник</h4><div class="day-slots"></div></div>
+      <div class="day-card" data-day="Вт"><h4>Вторник</h4><div class="day-slots"></div></div>
+      <div class="day-card" data-day="Ср"><h4>Среда</h4><div class="day-slots"></div></div>
+      <div class="day-card" data-day="Чт"><h4>Четверг</h4><div class="day-slots"></div></div>
+      <div class="day-card" data-day="Пт"><h4>Пятница</h4><div class="day-slots"></div></div>
+      <div class="day-card" data-day="Сб"><h4>Суббота</h4><div class="day-slots"></div></div>
+      <div class="day-card" data-day="Вс"><h4>Воскресенье</h4><div class="day-slots"></div></div>
+    </div>
+
+    <!-- Агрегированный список покупок -->
+    <h2>🛒 Список покупок из меню</h2>
+    <button id="generate-list-btn" type="button">Сгенерировать список продуктов</button>
+    <div id="shopping-list-container"></div>
+
+    <!-- Управление данными (LocalStorage) -->
+    <div class="storage-controls">
+      <h3>Управление памятью приложения</h3>
+      <p style="font-size: 0.9rem; color: #aaa;">Все ваши рецепты и составленное меню хранятся в памяти вашего браузера.</p>
+      <div style="display: flex; gap: 1rem;">
+        <button id="clear-menu-btn" style="background: #d46b08;">Очистить план недели</button>
+        <button id="reset-all-btn" style="background: #a61c1c;">Удалить вообще ВСЕ данные</button>
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>
