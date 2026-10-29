@@ -2,6 +2,8 @@
 
 **OpenHealth OS** is an open, modular, and independent ecosystem for health management ("Linux for health"). This repository contains a Minimum Viable Product (MVP) — a personal meal planner with automated calculations for calories and macronutrients (proteins, fats, and carbohydrates).
 
+**DEMO:** https://github.com/ThanasisStudio/openhealth-os/deployments/github-pages
+
 ## 🚀 How to run the project locally
 
 The project is built using a standard web stack (HTML5, CSS3, JavaScript) and requires no build tools or heavy dependencies.
